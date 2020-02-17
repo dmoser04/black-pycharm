@@ -29,10 +29,11 @@
     <extensions defaultExtensionNs="com.intellij">
         <projectConfigurable groupId="tools" displayName="BlackPycharm Configuration" id="preferences.BlackPycharmConfigurable" instance="BlackPycharmConfigurable" />
         <projectService serviceInterface="BlackPycharmConfig" serviceImplementation="BlackPycharmConfig"/>
+        <checkinHandlerFactory implementation="BlackPycharmCheckinFactory" order="last"/>
     </extensions>
 
   <actions>
-    <action id="BLACKReformatCode" class="ReformatCode" text="Reformat code (Black)" description="Reformat code using Black">
+    <action id="BLACKReformatCode" class="BlackPycharmReformatCodeAction" text="Reformat code (Black)" description="Reformat code using Black">
       <add-to-group group-id="CodeFormatGroup" anchor="first"/>
       <keyboard-shortcut keymap="$default" first-keystroke="meta alt L"/>
     </action>
